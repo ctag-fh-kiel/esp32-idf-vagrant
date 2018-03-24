@@ -14,9 +14,9 @@ clone this repository
 
 ## Creating VM
 
-cd esp32-vagrant
-vagrant up
-vagrant ssh
+* cd esp32-vagrant
+* vagrant up
+* vagrant ssh
 
 Your host file system is visible in ~/host
 
