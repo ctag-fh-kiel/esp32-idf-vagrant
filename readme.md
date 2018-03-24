@@ -5,9 +5,9 @@ Creates development environment for esp32 idf with Vagrant using a VirtualBox VM
 ## Prerequisites
 
 Download and install:
-https://www.vagrantup.com/
-https://git-scm.com/downloads
-https://www.virtualbox.org/wiki/Downloads and extensions (same page)
+* https://www.vagrantup.com/
+* https://git-scm.com/downloads
+* https://www.virtualbox.org/wiki/Downloads and extensions (same page)
 
 start Git Bash
 clone this repository
