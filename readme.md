@@ -8,13 +8,12 @@ Download and install:
 * https://www.vagrantup.com/
 * https://git-scm.com/downloads
 * https://www.virtualbox.org/wiki/Downloads and extensions (same page)
-
-start Git Bash
-clone this repository
+* start Git Bash
+* clone this repository
 
 ## Creating VM
 
-* cd esp32-vagrant
+* cd esp32-idf-vagrant
 * vagrant up
 * vagrant ssh
 
