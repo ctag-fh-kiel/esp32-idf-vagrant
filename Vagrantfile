@@ -9,6 +9,7 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "ubuntu/xenial64"
+  
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -41,14 +42,15 @@ Vagrant.configure(2) do |config|
   #
   config.vm.provider "virtualbox" do |vb|
    # Display the VirtualBox GUI when booting the machine
-   # vb.gui = true
+   # uncomment this if you want a vm with GUI
+   vb.gui = true
    vb.name = "esp32-idf"
    # Customize the amount of memory on the VM:
    vb.memory = "2048"
    
    # Use 2 CPUs
    vb.cpus = 2
-   
+        
    # Enable all USB devices needed for development
    vb.customize ['modifyvm', :id, '--usb', 'on']
    vb.customize ['modifyvm', :id, '--usbehci', 'on']
@@ -59,7 +61,9 @@ Vagrant.configure(2) do |config|
    #vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'AVRISP mkII', '--vendorid', '0x03EB', '--productid', '0x2104']
    #vb.customize ['usbfilter', 'add', '0', '--target', :id, '--name', 'FTDI serial adapter', '--vendorid', '0x0403', '--productid', '0x6001']
   end
-
+  
   # provisioning scripts
   config.vm.provision :shell, path: "0_install-toolchain.sh"
+  # uncomment this if you want a vm with GUI
+  config.vm.provision :shell, path: "1_install_x.sh"
 end
