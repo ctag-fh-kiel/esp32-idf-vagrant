@@ -19,7 +19,6 @@ Download and install:
 * In Git Bash: vagrant up
 * In Git Bash: vagrant reload
 * Log into VirtualBox VM after VM has booted: user: vagrant password: vagrant
-* After login in VM reboot VM once with: sudo reboot
 * After VM has rebooted log in and startx with: startx
 * [alternative] No GUI in Git Bash log in via ssh in VM console with: vagrant ssh
 
