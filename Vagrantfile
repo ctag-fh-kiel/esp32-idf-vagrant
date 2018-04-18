@@ -42,8 +42,10 @@ Vagrant.configure(2) do |config|
   #
   config.vm.provider "virtualbox" do |vb|
    # Display the VirtualBox GUI when booting the machine
-   # uncomment this if you want a vm with GUI
+   # comment this if you want a vm with no GUI
    vb.gui = true
+   
+   # Name of VM
    vb.name = "esp32-idf"
    # Customize the amount of memory on the VM:
    vb.memory = "2048"
@@ -64,6 +66,6 @@ Vagrant.configure(2) do |config|
   
   # provisioning scripts
   config.vm.provision :shell, path: "0_install-toolchain.sh"
-  # uncomment this if you want a vm with GUI
+  # comment this if you want a vm with no GUI
   config.vm.provision :shell, path: "1_install_x.sh"
 end
