@@ -4,10 +4,10 @@ Creates development environment for esp32 idf with Vagrant using a VirtualBox VM
 
 ## Prerequisites
 
-Download and install:
-* https://git-scm.com/downloads
-* https://www.virtualbox.org/wiki/Downloads and !extensions! (same page)
-* https://www.vagrantup.com/
+* Download and install:
+** https://git-scm.com/downloads
+** https://www.virtualbox.org/wiki/Downloads and !extensions! (same page)
+** https://www.vagrantup.com/
 * Start Git Bash
 * In Git Bash: Go to target folder (your choice, i.e. mkdir MyVMs, cd MyVMs)
 * In Git Bash: Clone repository with git clone https://github.com/ctag-fh-kiel/esp32-idf-vagrant.git 
