@@ -11,7 +11,7 @@ apt-get install -y linux-image-extra-virtual wget unzip tar
 #sudo apt-get install -y libusb-1.0-0 libusb-1.0-0-dev libftdi1 libftdi-dev 
 
 # Install basic development tools
-apt-get install -y git make libncurses-dev flex bison gperf python python-serial gcc g++ linux-headers-$(uname -r)
+apt-get install -y git make libncurses-dev flex bison gperf python python-serial python-pip python-dev build-essentialgcc g++ linux-headers-$(uname -r)
 
 # Allow non-root users to access USB devices
 echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="10C4", ATTRS{idProduct}=="EA60", GROUP="users", MODE="0666"' >> /etc/udev/rules.d/60-programmers.rules
@@ -27,8 +27,8 @@ tar -xzf xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz
 echo "export PATH=\"$PATH:/home/vagrant/xtensa-esp32-elf/bin:/home/vagrant/esp32ulp-elf-binutils/bin\"" >> .bash_profile 
 git clone --recursive https://github.com/espressif/esp-idf.git
 echo "export IDF_PATH=/home/vagrant/esp-idf" >> .bash_profile
-python -m pip install --user -r $IDF_PATH/requirements.txt
-cd $IDF_PATH
+python -m pip install --user -r /home/vagrant/esp-idf/requirements.txt
+cd /home/vagrant/esp-idf
 git checkout release/v3.2
 cd /home/vagrant
 wget -nv https://github.com/espressif/binutils-esp32ulp/releases/download/v2.28.51-esp32ulp-20180809/binutils-esp32ulp-linux64-2.28.51-esp32ulp-20180809.tar.gz
