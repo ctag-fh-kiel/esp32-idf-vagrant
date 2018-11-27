@@ -27,6 +27,7 @@ tar -xzf xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz
 echo "export PATH=\"$PATH:/home/vagrant/xtensa-esp32-elf/bin:/home/vagrant/esp32ulp-elf-binutils/bin\"" >> .bash_profile 
 git clone --recursive https://github.com/espressif/esp-idf.git
 echo "export IDF_PATH=/home/vagrant/esp-idf" >> .bash_profile
+pip install --upgrade pip
 python -m pip install --user -r /home/vagrant/esp-idf/requirements.txt
 cd /home/vagrant/esp-idf
 git checkout release/v3.2
