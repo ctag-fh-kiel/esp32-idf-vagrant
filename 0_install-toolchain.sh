@@ -24,7 +24,7 @@ cd /home/vagrant
 
 wget -nv https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz
 tar -xzf xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz
-echo "export PATH=\"$PATH:/home/vagrant/xtensa-esp32-elf/bin\"" >> .bash_profile 
+echo "export PATH=\"$PATH:/home/vagrant/xtensa-esp32-elf/bin:/home/vagrant/esp32ulp-elf-binutils/bin\"" >> .bash_profile 
 git clone --recursive https://github.com/espressif/esp-idf.git
 echo "export IDF_PATH=/home/vagrant/esp-idf" >> .bash_profile
 python -m pip install --user -r $IDF_PATH/requirements.txt
@@ -33,7 +33,6 @@ git checkout release/v3.2
 cd /home/vagrant
 wget -nv https://github.com/espressif/binutils-esp32ulp/releases/download/v2.28.51-esp32ulp-20180809/binutils-esp32ulp-linux64-2.28.51-esp32ulp-20180809.tar.gz
 tar xf binutils-esp32ulp-linux64-2.28.51-esp32ulp-20180809.tar.gz
-echo "export PATH=\"$PATH:/home/vagrant/esp32ulp-elf-binutils/bin\"" >> .bash_profile 
 
 # create esp dir
 mkdir host/esp
