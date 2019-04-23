@@ -45,7 +45,7 @@ Vagrant.configure(2) do |config|
    vb.gui = true
    
    # Name of VM
-   vb.name = "esp32-idf-3.2-mar19"
+   vb.name = "esp32-idf-3.2-april19"
    # Customize the amount of memory on the VM:
    vb.memory = "2048"
    
