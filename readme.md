@@ -20,7 +20,6 @@ Creates development environment for ESP32 idf with Vagrant using a VirtualBox VM
 * After cloning in Git Bash change directory: 
 	* cd esp32-idf-vagrant
 * In Git Bash: 
-	* vagrant plugin install vagrant-vbguest
 	* vagrant up (takes depending on host CPU 10 mins)
 	* vagrant reload (reboots the VM, required at first use, takes depending on CPU 10 mins)
 * Log into VirtualBox VM after VM has booted: user: vagrant password: vagrant
@@ -29,6 +28,7 @@ Creates development environment for ESP32 idf with Vagrant using a VirtualBox VM
 
 ## Remarks
 
+* Vagrant and Virtualbox V6.0.6 has issues with the guest additions (vbguest plugin)
 * Your host file system is mounted in ~/host in client
 * Use vagrant suspend to put VM asleep
 * Use vagrant up to awake VM
