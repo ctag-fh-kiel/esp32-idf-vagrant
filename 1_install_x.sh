@@ -22,6 +22,3 @@ apt-get install -y code libxss1
 echo 'Europe/Zurich' > /etc/timezone 
 rm /etc/localtime
 dpkg-reconfigure -f noninteractive tzdata
-
-
-
