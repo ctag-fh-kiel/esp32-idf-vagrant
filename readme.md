@@ -28,7 +28,7 @@ Creates development environment for ESP32 idf with Vagrant using a VirtualBox VM
 
 ## Remarks
 
-* Vagrant and Virtualbox V6.0.6 has issues with the guest additions (vbguest plugin)
+* Vagrant and Virtualbox V6.0.6 has issues with the guest additions (vbguest plugin needs to be installed, may cause VM to be very slow)
 * Your host file system is mounted in ~/host in client
 * Use vagrant suspend to put VM asleep
 * Use vagrant up to awake VM
