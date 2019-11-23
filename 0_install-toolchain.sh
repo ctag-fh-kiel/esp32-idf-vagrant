@@ -6,12 +6,14 @@ apt-get upgrade -y
 # setup ttyusb
 # https://askubuntu.com/questions/935350/ubuntu-16-04-1-usbserial-missing/984031
 apt-get install -y linux-image-extra-virtual wget unzip tar
+# alternative
+# sudo apt install linux-modules-extra-$(uname -r)
 
 # Install basic development tools
 #sudo apt-get install -y libusb-1.0-0 libusb-1.0-0-dev libftdi1 libftdi-dev 
 
 # Install basic development tools
-apt-get install -y git make libncurses-dev flex bison gperf python python-serial python-pip python-dev build-essential gcc g++ linux-headers-$(uname -r)
+apt-get install -y git make libncurses-dev flex bison gperf python python-serial python-pip python-dev build-essential gcc g++ linux-headers-$(uname -r) cmake-curses-gui cmake wget python-setuptools python-serial python-click python-cryptography python-future python-pyparsing python-pyelftools ninja-build ccache
 
 # Allow non-root users to access USB devices
 echo 'SUBSYSTEMS=="usb", ATTRS{idVendor}=="10C4", ATTRS{idProduct}=="EA60", GROUP="users", MODE="0666"' >> /etc/udev/rules.d/60-programmers.rules
@@ -21,20 +23,22 @@ sudo udevadm trigger
 
 # Install toolchain for esp32 and set up environment variables
 cd /home/vagrant
-
-wget -nv https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz
-tar -xzf xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz
-echo "export PATH=\"$PATH:/home/vagrant/xtensa-esp32-elf/bin:/home/vagrant/esp32ulp-elf-binutils/bin\"" >> .bash_profile 
 git clone --recursive https://github.com/espressif/esp-idf.git
+cd esp-idf
+./install.sh
+# wget -nv https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz
+# tar -xzf xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz
+echo "export PATH=\"$PATH:/home/vagrant/xtensa-esp32-elf/bin:/home/vagrant/esp32ulp-elf-binutils/bin\"" >> .bash_profile 
+# git clone --recursive https://github.com/espressif/esp-idf.git
 echo "export IDF_PATH=/home/vagrant/esp-idf" >> .bash_profile
-pip install --upgrade pip
-cd /home/vagrant/esp-idf
-git checkout release/v3.2
-git submodule update
-python -m pip install --user -r /home/vagrant/esp-idf/requirements.txt
-cd /home/vagrant
-wget -nv https://github.com/espressif/binutils-esp32ulp/releases/download/v2.28.51-esp32ulp-20180809/binutils-esp32ulp-linux64-2.28.51-esp32ulp-20180809.tar.gz
-tar xf binutils-esp32ulp-linux64-2.28.51-esp32ulp-20180809.tar.gz
+# pip install --upgrade pip
+# cd /home/vagrant/esp-idf
+# git checkout release/v3.2
+# git submodule update
+# python -m pip install --user -r /home/vagrant/esp-idf/requirements.txt
+# cd /home/vagrant
+# wget -nv https://github.com/espressif/binutils-esp32ulp/releases/download/v2.28.51-esp32ulp-20180809/binutils-esp32ulp-linux64-2.28.51-esp32ulp-20180809.tar.gz
+# tar xf binutils-esp32ulp-linux64-2.28.51-esp32ulp-20180809.tar.gz
 
 # create esp dir
 mkdir host/esp-src

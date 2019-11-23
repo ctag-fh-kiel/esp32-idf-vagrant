@@ -20,6 +20,7 @@ Creates development environment for ESP32 idf with Vagrant using a VirtualBox VM
 * After cloning in Git Bash change directory: 
 	* cd esp32-idf-vagrant
 * In Git Bash: 
+	* vagrant plugin install vagrant-disksize
 	* vagrant up (takes depending on host CPU 10 mins)
 	* vagrant reload (reboots the VM, required at first use, takes depending on CPU 10 mins)
 * Log into VirtualBox VM after VM has booted: user: vagrant password: vagrant

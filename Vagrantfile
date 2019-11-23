@@ -9,6 +9,7 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "ubuntu/xenial64"
+  config.disksize.size = '40GB'
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -45,9 +46,9 @@ Vagrant.configure(2) do |config|
    vb.gui = true
    
    # Name of VM
-   vb.name = "esp32-idf-3.2-april19"
+   vb.name = "esp32-idf-master-nov-19"
    # Customize the amount of memory on the VM:
-   vb.memory = "2048"
+   vb.memory = "4096"
    
    # Use 2 CPUs
    vb.cpus = 2
